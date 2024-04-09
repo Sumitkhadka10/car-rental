@@ -1,0 +1,105 @@
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+    animation: popInBox 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes popInBox {
+    from {
+        transform: translateY(-50px) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.form {
+    width: 100%;
+}
+.login-container {
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    font-size: 14px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.welcome-text {
+    text-align: left;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    animation: popInWelcome 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes popInWelcome {
+    from {
+        transform: translateY(-50px) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
