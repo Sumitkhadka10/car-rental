@@ -4,7 +4,7 @@
 }
 
 .sidebar {
-  background-color: #33333376;
+  background-color: #333333;
   color: #fff;
   width: 250px;
   padding: 20px;
@@ -24,16 +24,21 @@
 
 .sidebar button {
   border: none;
-  color: #070707;
+  color: #fff;
   cursor: pointer;
   font-size: 16px;
   padding: 10px;
   transition: background-color 0.3s ease;
   width: 100%;
   text-align: left;
+  background-color: transparent;
 }
 
 .sidebar button:hover {
+  background-color: #555;
+}
+
+.sidebar button.active {
   background-color: #555;
 }
 
@@ -43,7 +48,10 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.dashboard-content {
+  flex: 1;
 }
 
 .dashboard-row {
@@ -57,19 +65,31 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(50% - 20px); 
+  width: calc(50% - 20px);
   margin-bottom: 20px;
   padding: 20px;
   transition: transform 0.3s ease;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .dashboard-item:hover {
   transform: translateY(-5px);
 }
 
-@media only screen and (max-width: 768px) {
-  .dashboard-item {
-    width: calc(100% - 20px); 
-  }
+.right-sidebar {
+  background-color: #f0f0f0;
+  width: 250px;
+  padding: 20px;
+}
+
+.total-sales-box {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.total-sales-box:hover {
+  transform: translateY(-5px);
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { RiCarLine } from 'react-icons/ri'; // Import the car icon
-import { FaUserCog } from 'react-icons/fa'; // Import the admin icon
+import { RiCarLine } from 'react-icons/ri'; 
+import { FaUserCog } from 'react-icons/fa'; 
 import '../../styles/header.css';
 
 const navLinks = [

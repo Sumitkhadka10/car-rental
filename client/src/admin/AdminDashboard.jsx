@@ -13,17 +13,16 @@ const AdminDashboard = () => {
   const [activeSection, setActiveSection] = useState('carmanagement');
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalIncome, setTotalIncome] = useState(0);
+  const [totalSales, setTotalSales] = useState(0);
 
-  // Simulating fetching total users and total income from backend
   useEffect(() => {
-    // Assuming you have a function to fetch total users and total income from backend
     const fetchDashboardData = async () => {
       try {
-        // Example API call to fetch total users and total income
         const response = await fetch('/api/dashboard');
         const data = await response.json();
         setTotalUsers(data.totalUsers);
         setTotalIncome(data.totalIncome);
+        setTotalSales(data.totalSales);
       } catch (error) {
         console.error('Error fetching dashboard data:', error);
       }
@@ -39,7 +38,6 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-      {/* Sidebar */}
       <div className="sidebar">
         <div className="user-profile-container">
           <div className="user-profile">
@@ -87,9 +85,7 @@ const AdminDashboard = () => {
         </ul>
       </div>
 
-      {/* Content */}
       <div className="content">
-        <div className="big-picture-container">{/* Add your big picture here */}</div>
         <div className="dashboard-content">
           <div className="dashboard-row">
             <div className="dashboard-item">
@@ -124,7 +120,13 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Routes */}
+      <div className="right-sidebar">
+        <div className="total-sales-box">
+          <h2>Total Sales of Cars</h2>
+          <p>{totalSales}</p>
+        </div>
+      </div>
+
       <Routes>
         <Route path="carmanagement" element={<CarManagement />} />
         <Route path="bookingmanagement" element={<BookingManagement />} />

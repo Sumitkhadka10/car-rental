@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../admin/styles/carmanagement.css';
 
 const CarManagement = () => {
-  // Sample initial cars data
   const initialCars = [
     { id: 1, brand: 'Toyota', model: 'Corolla', image: 'corolla.jpg', price: 20000 },
     { id: 2, brand: 'Honda', model: 'Civic', image: 'civic.jpg', price: 22000 },
@@ -29,13 +28,9 @@ const CarManagement = () => {
     image: null,
     price: ''
   });
-
-  // Function to handle search input change
   const handleSearchInputChange = (event) => {
     const query = event.target.value.trim().toLowerCase();
     setSearchQuery(query);
-
-    // Filter cars based on the start of brand or model name
     const filteredCars = initialCars.filter(car =>
       car.brand.toLowerCase().startsWith(query) ||
       car.model.toLowerCase().startsWith(query)
@@ -44,12 +39,11 @@ const CarManagement = () => {
     setCars(filteredCars);
   };
 
-  // Function to add a new car
   const handleAddCar = () => {
     const id = cars.length + 1;
     const updatedCars = [...cars, { ...newCar, id }];
     setCars(updatedCars);
-    setNewCar({ brand: '', model: '', image: null, price: '' }); // Reset the form fields
+    setNewCar({ brand: '', model: '', image: null, price: '' }); 
   };
 
   // Function to edit car details
@@ -57,7 +51,7 @@ const CarManagement = () => {
     // Find the index of the car with the given id
     const carIndex = cars.findIndex(car => car.id === id);
     if (carIndex !== -1) {
-      // Prompt the user for the updated details (for simplicity, we'll just log them to the console)
+
       const updatedBrand = prompt('Enter the updated brand:');
       const updatedModel = prompt('Enter the updated model:');
       const updatedPrice = prompt('Enter the updated price:');

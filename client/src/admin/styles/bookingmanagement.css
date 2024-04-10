@@ -1,36 +1,72 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+th, td {
+  font-size: 14px;
+}
+
+.approve-button, .cancel-button, .send-message-button {
+  background-color: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.approve-button:hover, .cancel-button:hover, .send-message-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.approve-button {
+  border-color: #28a745;
+}
+
+.cancel-button {
+  border-color: #dc3545;
+}
+
+.action-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-column button {
+  margin-right: 10px; /* Add spacing between buttons */
+}
+
+@media (max-width: 768px) {
   th, td {
     padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+    font-size: 12px;
   }
-  
-  th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-  
-  @media (max-width: 768px) {
-    th, td {
-      padding: 8px;
-      font-size: 12px;
-    }
-  }
-  
+}
