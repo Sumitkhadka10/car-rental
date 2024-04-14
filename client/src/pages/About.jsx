@@ -6,15 +6,12 @@ import '../styles/about.css';
 const About = () => {
   return (
     <div className="about-container">
-      <div className="about-header">
-        <h1 className="about-heading">VROOM Car Rental</h1>
-      </div>
       <div className="about-content">
         <div className="about-image">
           <img src={aboutImage} alt="About" />
         </div>
         <div className="about-text">
-          <h2 className="about-heading">About VROOM Car Rental</h2>
+          <h2 className="about-heading">About VROOM CAR RENTAL</h2>
           <p className="about-description">
             VROOM Car Rental is your ultimate destination for hassle-free and unforgettable car rental experiences. We understand the importance of freedom and flexibility when it comes to exploring new destinations, and we strive to provide top-notch services to ensure your journey is smooth, enjoyable, and memorable.
           </p>

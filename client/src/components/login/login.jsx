@@ -46,10 +46,9 @@ const LoginPage = () => {
       <div className="content">
         {showWelcome && (
           <div className="welcome-text">
-            <h3>Welcome back!</h3>
+            <h3>Welcome back !</h3>
           </div>
         )}
-        <div className="box">VROOM Car Rental</div>
         <div className="form">
           <div className="login-container">
             {loggedIn ? (

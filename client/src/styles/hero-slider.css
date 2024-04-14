@@ -1,21 +1,30 @@
 .slider__item {
     width: 100%;
-    height: 650px; /* Adjust height as needed */
+    height: 430px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
-}
+    background-size: cover;
+  }
 
 .slider__item-01 {
-    background: linear-gradient(rgb(182, 255, 187, 0.7), rgb(182, 255, 187, 0.7)), url('../assets/all-images/slider-img/slider-1.jpeg');
+    background: url('../assets/all-images/slider-img/dan-gold-N7RiDzfF2iw-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .slider__item-02 {
-    background: linear-gradient(rgb(182, 255, 187, 0.7), rgb(182, 255, 187, 0.7)), url('../assets/all-images/slider-img/slider-2.jpeg');
+    background:  url('../assets/all-images/slider-img/joey-banks-YApiWyp0lqo-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .slider__item-03 {
-    background: linear-gradient(rgb(182, 255, 187, 0.7), rgb(182, 255, 187, 0.7)), url('../assets/all-images/slider-img/slider-3.jpg');
+    background:  url('../assets/all-images/slider-img/peter-broomfield-m3m-lnR90uM-unsplash\ \(1\).jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .hero__slider {
@@ -29,13 +38,13 @@
 .slider__content h1,
 .slider__content h4,
 .slider__content h6 {
-    font-size: 3.8rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #000;
+    color: #d90c0c;
 }
 
 .reserve__btn {
-    background: linear-gradient(135deg, #FFFF00, #32CD32) !important;
+    background: linear-gradient(130deg, #0066ff, #767476) !important;
     color: #040404;
     border: none;
     outline: none;
@@ -43,7 +52,9 @@
 
 .reserve__btn a {
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
+    color: white;
+    padding: 10px 25px;
 }
 
 .text-light {

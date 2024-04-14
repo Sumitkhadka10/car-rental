@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1 ><Link to='/home' className='d-flex align-items-center gap-2'>
                 <i class="ri-car-line"></i>
-                <span>VROOM <br /> Car Rental</span>
+                <span>VROOM CAR RENTAL</span>
               </Link></h1>
             </div>
             <p className="footer__logo-content">

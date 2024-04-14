@@ -1,8 +1,13 @@
-.main-container {
+.main {
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     display: flex;
-    background-color: #f0f0f0;
+    background-color: rgba(248, 249, 250, 0.5);
+    background-image: url(./joey-banks-YApiWyp0lqo-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
 }
 
 .image-wrapper {
@@ -31,7 +36,7 @@
 }
 
 .signup-form {
-    width: 400px;
+    width: 350px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -42,9 +47,9 @@
     align-items: center;
 }
 
-.signup-header {
-    margin-bottom: 16px;
-    font-size: 24px;
+.signup-header p{
+    margin-bottom: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -64,11 +69,11 @@
 .signup-textfields {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     width: 100%;
 
     label {
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
         color: #333;
     }
@@ -76,14 +81,14 @@
     input {
         width: 100%;
         height: 40px;
-        font-size: 16px;
+        font-size: 12px;
         padding: 8px;
-        border: 1px solid #ccc;
+        border: 2px solid #ced4da;
         border-radius: 5px;
         outline: none;
 
         &:focus {
-            border-color: #3D9769;
+            border-color: #007bff;
         }
     }
 }
@@ -91,29 +96,32 @@
 .signup-btn {
     width: 100%;
     height: 40px;
+    margin-top: 15px;
     font-size: 16px;
     font-weight: 500;
     color: #fff;
-    background-color: #3D9769;
+    background:linear-gradient(130deg, #3280f5, #9b9a9b) !important;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 
     &:hover {
-        background-color: #387668;
+        background-color: #004b9c;
     }
 }
 
 .signup-to-login {
-    color: #3D9769;
+    color: #007bff;
     margin-top: 12px;
     font-size: 14px;
     cursor: pointer;
     transition: color 0.3s;
 
     &:hover {
-        color: #387668;
+        color: #004b9c;
+        font-weight: bold;
+        text-decoration: underline;
     }
 }
 
@@ -126,11 +134,13 @@
     transition: color 0.3s;
 
     &:hover {
-        color: #387668;
+        color: #007bff;
     }
 }
 
 .signup-footer {
     display: flex;
     flex-direction: column;
+    font-size: 12px;
+    color: #fff;
 }

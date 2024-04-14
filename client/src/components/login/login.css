@@ -2,8 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
+    height: 85vh;
+    background-image: url('./joey-banks-YApiWyp0lqo-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: aliceblue;
 }
 
 .content {
@@ -11,23 +15,13 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 360px;
     padding: 20px;
-    background-color: #fff;
+    background-color: aliceblue;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
 
-.box {
-    width: 100%;
-    background-color: #007bff;
-    color: #fff;
-    padding: 25px;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-    margin-bottom: 10px;
-    animation: popInBox 0.5s ease forwards;
-    opacity: 0;
+
 }
 
 @keyframes popInBox {
@@ -43,7 +37,10 @@
 
 .form {
     width: 100%;
+    font-size: 12px;
+    background-color: aliceblue;
 }
+
 .login-container {
     border-radius: 0 0 10px 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -53,12 +50,13 @@
 .form h2 {
     margin-bottom: 20px;
     text-align: center;
+    font-size: 25px;
 }
 
 .form input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+    padding: 8px;
+    margin-bottom: 15px;
     border: 1px solid #ced4da;
     border-radius: 5px;
 }
@@ -66,40 +64,41 @@
 .form button {
     width: 100%;
     padding: 12px;
-    background-color: #007bff;
+    background:linear-gradient(130deg, #3280f5, #9b9a9b) !important;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .form button:hover {
-    background-color: #0056b3;
+    background:linear-gradient(130deg, #0066ff, #5c5b5c) !important;
 }
 
 .forgot-password {
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     text-align: right;
 }
 
-.welcome-text {
-    text-align: left;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    animation: popInWelcome 0.5s ease forwards;
-    opacity: 0;
+.forgot-password:hover {
+    text-decoration: underline;
 }
 
-@keyframes popInWelcome {
-    from {
-        transform: translateY(-50px) scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
+.welcome-text {
+    text-align: left;
+    padding: 5px 40px;
+    margin-bottom: 30px;
+    background:linear-gradient(130deg, #3280f5, #9b9a9b) !important;
+    border-radius: 10px;
+}
+
+.welcome-text h3 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
 }

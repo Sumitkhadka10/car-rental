@@ -1,56 +1,66 @@
 .find__cars-container {
-    padding: 50px;
+    padding: auto;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(149, 145, 145, 0.1);
 }
 
 .find__cars-left {
-    background: linear-gradient(rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0.6)), url('../assets/all-images/Find ur car.jpg');
-    background-position: center;
+    background:url('../assets/all-images/slider-img/peter-broomfield-m3m-lnR90uM-unsplash\ \(1\).jpg');
+    background-position: cover;
     background-repeat: no-repeat;
-    background-size: 120% 120%;
-    padding: 100px 20px;
-    border-radius: 10px;
+    background-size: 100% 100%;
+    padding: 100px 5px;
+    border-radius: 30px;
     overflow: hidden;
 }
 
+.find__cars-left h2{
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+}
+
 .form__group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form__group label {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1rem;
+    color: #000000;
+    margin-top: 50px;
     margin-bottom: 10px;
     display: block;
 }
 
 .form__group input[type='text'],
 .form__group input[type='date'] {
-    width: calc(100% - 20px);
+    width: calc(100%-10px);
     padding: 15px;
     border: 2px solid #ccc;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: #fff;
-    color: #333;
-    font-size: 1rem;
+    color: #000000;
+    font-size: 0.8rem;
     outline: none;
 }
 
 .form__group button {
-    padding: 15px 40px;
-    background-color: #007bff;
+    margin-top: 85px;
+    padding: 10px 40px;
+    background:linear-gradient(130deg, #3280f5, #9b9a9b) !important;
     color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1rem;
     display: block;
     width: 100%;
+    font-weight: bold;
 }
 
 .form__group button:hover {
-    background-color: #0056b3;
+    background:linear-gradient(130deg, #0066ff, #5c5b5c) !important;
 }
