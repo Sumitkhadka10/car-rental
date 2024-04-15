@@ -1,43 +1,69 @@
-import React from 'react';
-import aboutImage from '../assets/all-images/cars-img/OFFER.png';
-import hotOffersImage from '../assets/all-images/cars-img/nissan-offer.png';
-import '../styles/about.css';
+import React from "react";
+import Helmet from "../components/Helmet/Helmet";
+import AboutSection from "../UI/aboutsection";
+import { Container, Row, Col } from "reactstrap";
+
+import driveImg from "../assets/all-images/cars-img/vi.png";
+import OurMembers from "../UI/ourmember";
+import "../styles/about.css";
 
 const About = () => {
   return (
-    <div className="about-container">
-      <div className="about-content">
-        <div className="about-image">
-          <img src={aboutImage} alt="About" />
-        </div>
-        <div className="about-text">
-          <h2 className="about-heading">About VROOM CAR RENTAL</h2>
-          <p className="about-description">
-            VROOM Car Rental is your ultimate destination for hassle-free and unforgettable car rental experiences. We understand the importance of freedom and flexibility when it comes to exploring new destinations, and we strive to provide top-notch services to ensure your journey is smooth, enjoyable, and memorable.
-          </p>
-          <p className="about-description">
-            At VROOM Car Rental, we offer a diverse range of vehicles to suit your needs, whether it's a compact car for city exploration, a spacious SUV for family adventures, or a luxurious sedan for business travel. Our fleet consists of well-maintained and modern vehicles, ensuring both comfort and reliability on the road.
-          </p>
-          <p className="about-description">
-            Our dedicated team of professionals is committed to providing exceptional customer service, guiding you through every step of the rental process and addressing any concerns or queries you may have. With convenient booking options, flexible rental durations, and competitive pricing, VROOM Car Rental makes renting a car easy and accessible for everyone.
-          </p>
-        </div>
-      </div>
-      <div className="hot-offers">
-        <div className="hot-offers-image">
-          <img src={hotOffersImage} alt="Hot Offers" />
-        </div>
-        <div className="hot-offers-text">
-          <h3 className="hot-offers-heading">HOT OFFERS FOR A DAY</h3>
-          <p className="hot-offers-description">
-            There is a special offer available for Nissan cars today! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non nunc sit amet mi hendrerit aliquet. Proin id ligula sed lectus varius tincidunt. Fusce quis ex ut orci posuere varius. Donec mollis risus et ligula aliquet, sit amet auctor turpis tempus. Nullam fermentum sagittis eros, nec consequat odio fermentum sit amet. Nam at pulvinar elit. Nullam commodo lacus non odio ultricies, sed laoreet leo tristique.
-          </p>
-          <p className="hot-offers-description">
-            Vestibulum dapibus magna non leo posuere consectetur. In hac habitasse platea dictumst. Sed ut pharetra risus. Nulla facilisi. Vivamus ac vehicula diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Quisque nec ligula in purus convallis cursus. Ut sit amet ullamcorper odio, sit amet dictum orci. Integer vitae nisl ac purus blandit accumsan.
-          </p>
-        </div>
-      </div>
-    </div>
+    <Helmet title="About">
+      <AboutSection aboutClass="aboutPage" />
+
+      <section className="about__page-section">
+        <Container>
+          <Row>
+            <Col lg="6" md="6" sm="12">
+              <div className="about__page-img">
+                <img src={driveImg} alt="" className="w-100 rounded-3" />
+              </div>
+            </Col>
+
+            <Col lg="6" md="6" sm="12">
+              <div className="about__page-content">
+                <h2 className="section__title">
+                  We Are Committed To Provide Safe Ride Solutions
+                </h2>
+
+                <p className="section__description">
+                VROOM Car Rental is your ultimate destination for hassle-free and unforgettable car rental experiences. 
+                We understand the importance of freedom and flexibility when it comes to exploring new destinations, 
+                and we strive to provide top-notch services to ensure your journey is smooth, enjoyable, and memorable.
+                </p>
+
+                <p className="section__description">
+                At VROOM Car Rental, we offer a diverse range of vehicles to suit your needs, whether it's a compact car for city exploration, a spacious SUV for family adventures, or a luxurious sedan for business travel. Our fleet consists of well-maintained and modern vehicles, ensuring both comfort and reliability on the road.
+                </p>
+
+                <div className=" d-flex align-items-center gap-3 mt-4">
+                  <span className="fs-4">
+                    <i class="ri-phone-line"></i>
+                  </span>
+
+                  <div>
+                    <h6 className="section__subtitle">Need Any Help?</h6>
+                    <h4>+9779813000000</h4>
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-5 text-center">
+              <h6 className="section__subtitle">Experts</h6>
+              <h2 className="section__title">Our Members</h2>
+            </Col>
+            <OurMembers />
+          </Row>
+        </Container>
+      </section>
+    </Helmet>
   );
 };
 

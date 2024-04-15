@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles/bookingmanagement.css';
 
+
 const BookingManagement = () => {
   const [bookings, setBookings] = useState([
     {
@@ -70,7 +71,6 @@ const BookingManagement = () => {
   };
 
   const handleSendMessage = (id) => {
-    // Logic to send a message to the user after approving the booking
     console.log('Message sent to user with ID:', id);
   };
 

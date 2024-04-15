@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
-import CommonSection from "../UI/commonsection";
+// import CommonSection from "../UI/commonsection";
 
 import "../styles/contact.css";
 
@@ -28,7 +28,7 @@ const socialLinks = [
 const Contact = () => {
   return (
     <Helmet title="Contact">
-      <CommonSection title="Contact" />
+      {/* <CommonSection title="Contact" /> */}
       <section>
         <Container>
           <Row>
@@ -64,7 +64,7 @@ const Contact = () => {
                 </p>
                 <div className=" d-flex align-items-center gap-2">
                   <h6 className="fs-6 mb-0">Phone:</h6>
-                  <p className="section__description mb-0">+9779813620594</p>
+                  <p className="section__description mb-0">+9779813600000</p>
                 </div>
 
                 <div className=" d-flex align-items-center gap-2">
