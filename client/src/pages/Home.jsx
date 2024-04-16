@@ -8,10 +8,6 @@ import FindCarForm from '../UI/FindCarForm';
 const Home = () => {
   return (
    <Helmet title='Home'>
-
-
-
-    {/* ============= hero section ======================= */}
     <section className="p-0 hero__slider-section">
       <HeroSlider/>
 
@@ -23,8 +19,6 @@ const Home = () => {
                 <h2>For Instant Booking</h2>
               </div>
             </Col>
-
-
            <Col lg="8" md="8" sm="12">
             <FindCarForm/>
            </Col>
