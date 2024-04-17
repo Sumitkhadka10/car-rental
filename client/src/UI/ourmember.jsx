@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import ava01 from "../assets/all-images/members/1.jpg";
 import ava02 from "../assets/all-images/members/2.png";
 import ava03 from "../assets/all-images/members/5.jpg";
-import ava04 from "../assets/all-images/members/3.png";
+import ava04 from "../assets/all-images/members/a.jpg";
 import ava05 from "../assets/all-images/members/4.png";
 const OUR__MEMBERS = [
   {
