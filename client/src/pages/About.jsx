@@ -26,7 +26,7 @@ const About = () => {
             <Col lg="6" md="6" sm="12">
               <div className="about__page-content">
                 <h2 className="section__title">
-                  We Are Committed To Provide Safe Ride Solutions
+                  We Are Committed To Provide Safe Ride Solutions.
                 </h2>
 
                 <p className="section__description">
@@ -45,7 +45,7 @@ const About = () => {
                   </span>
 
                   <div>
-                    <h6 className="section__subtitle">Need Any Help?</h6>
+                    <h6 className="section__subtitle">Need Any Help? Contact us on</h6>
                     <h4>+9779813000000</h4>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ const About = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-4 text-center">
-              <h6 className="section__subtitle">Our clients says</h6>
+              <h6 className="section__subtitle">Our clients says.</h6>
               <h2 className="section__title">Testimonials</h2>
             </Col>
 

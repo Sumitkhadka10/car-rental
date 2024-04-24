@@ -32,7 +32,9 @@
     font-size: 0.9rem;
     font-weight: 600;
   }
-  
+  .mb-4 p {
+    color: #f9a826;
+}
   .single__member-social a {
     text-decoration: none;
     cursor: pointer;
