@@ -1,5 +1,3 @@
-// router.jsx
-
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from '../pages/Home';
@@ -11,11 +9,12 @@ import BlogDetails from '../pages/BlogDetails';
 import NotFound from '../pages/NotFound';
 import LoginPage from '../components/login/login.jsx';
 import Signup from '../components/signup/signup.jsx';
-import AdminDashboard from '../admin/AdminDashboard.jsx'; // Import AdminDashboard component
+import AdminDashboard from '../admin/AdminDashboard.jsx';
 import CarManagement from '../admin/carmanagement';
 import BookingManagement from '../admin/bookingmanagement';
 import UserManagement from '../admin/usermanagement';
 import Settings from '../admin/setting';
+// import ReservationPage from '../pages/ReservationPage'; // Import the ReservationPage component
 
 const Routers = () => {
   return (
@@ -29,11 +28,12 @@ const Routers = () => {
       <Route path='/blogs/:slug' element={<BlogDetails/>}/>
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/signup' element={<Signup/>}/>
-      <Route path='/admin/*' element={<AdminDashboard/>}/> {/* Add AdminDashboard route */}
-      <Route path='/admin/carmanagement' element={<CarManagement/>}/> {/* Add CarManagement route */}
-      <Route path='/admin/bookingmanagement' element={<BookingManagement/>}/> {/* Add BookingManagement route */}
-      <Route path='/admin/usermanagement' element={<UserManagement/>}/> {/* Add UserManagement route */}
-      <Route path='/admin/setting' element={<Settings/>}/> {/* Add Settings route */}
+      {/* <Route path='/reservation' element={<ReservationPage/>}/> Route for the reservation page */}
+      <Route path='/admin/*' element={<AdminDashboard/>}/>
+      <Route path='/admin/carmanagement' element={<CarManagement/>}/> 
+      <Route path='/admin/bookingmanagement' element={<BookingManagement/>}/> 
+      <Route path='/admin/usermanagement' element={<UserManagement/>}/> 
+      <Route path='/admin/setting' element={<Settings/>}/> 
       <Route path='*' element={<NotFound/>}/>
     </Routes>
   )

@@ -1,64 +1,67 @@
 /* Sidebar.css */
 
 .sidebar {
-    width: 250px;
-    background-color: #f0f0f0; 
-    position: fixed;
-    top: 0;
-    left: -250px; 
-    bottom: 0;
-    overflow-y: auto; /* Enable vertical scrolling */
-    transition: left 0.3s ease; 
-  }
-  
-  .sidebar.show {
-    left: 0; /* Show sidebar */
-  }
-  
-  .sidebar ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  
-  .sidebar li {
-    margin-bottom: 15px;
-  }
-  
-  .sidebar a {
-    display: block;
-    padding: 12px;
-    color: #333; /* Link text color */
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .sidebar a:hover {
-    background-color: #ddd; /* Hover background color */
-  }
-  
-  .user-profile {
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    background-color: #fff; /* User profile background color */
-  }
-  
-  .user-profile span {
-    margin-left: 10px;
-  }
-  
-  .sign-out-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #dc3545; /* Sign out button background color */
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .sign-out-button:hover {
-    background-color: #c82333; /* Hover background color */
-  }
-  
+  width: 250px;
+  background-color: #f0f0f0; 
+  position: fixed;
+  top: 0;
+  left: -250px; 
+  bottom: 0;
+  overflow-y: auto;
+  transition: left 0.3s ease; 
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+.sidebar li:nth-child(1) a:hover {
+  background-color: transparent;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.user-profile span {
+  margin-left: 10px;
+}
+
+.sign-out-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign-out-button:hover {
+  background-color: #c82333;
+}

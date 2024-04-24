@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles/sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSignOutAlt, faCar } from '@fortawesome/free-solid-svg-icons'; // Assuming faCar is the icon for Car Management
 
 const Sidebar = ({ show }) => {
+  const [isCarManagementClicked, setIsCarManagementClicked] = useState(false);
+
+  const handleCarManagementClick = () => {
+    setIsCarManagementClicked(!isCarManagementClicked);
+  };
+
   return (
     <div className={`sidebar ${show ? 'show' : ''}`}>
       <ul>
-        <li>
-          <Link to="/admin/carmanagement">Car Management</Link>
+        <li className={isCarManagementClicked ? 'active' : ''}>
+          <Link to="/admin/carmanagement" onClick={handleCarManagementClick}>
+            <FontAwesomeIcon icon={faCar} />
+            Car Management
+          </Link>
         </li>
         <li>
           <Link to="/admin/bookingmanagement">Booking Management</Link>

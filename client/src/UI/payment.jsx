@@ -1,10 +1,24 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 import masterCard from "../assets/all-images/master-card.jpg";
 import paypal from "../assets/all-images/paypal.jpg";
 import "../styles/paymentmethod.css";
 
 const PaymentMethod = () => {
+  const navigate = useNavigate();
+
+  const isLoggedIn = false; // Replace this with your actual login state
+
+  const handleReserveClick = () => {
+    if (!isLoggedIn) {
+      navigate("/login"); // Navigate to the login page
+    } else {
+      // Implement reservation functionality here if user is logged in
+      console.log("Reservation functionality");
+    }
+  };
+
   return (
     <>
       <div className="payment">
@@ -35,7 +49,7 @@ const PaymentMethod = () => {
         <img src={paypal} alt="" />
       </div>
       <div className="payment text-end mt-5">
-        <button>Reserve Now</button>
+        <button onClick={handleReserveClick}>Reserve Now</button>
       </div>
     </>
   );

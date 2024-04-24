@@ -12,7 +12,7 @@
   
   .header__top__left span {
     font-size: 1.2rem;
-    color: #f92626;
+    color: #f9a826;
   }
   
   .header__top__right {
@@ -46,7 +46,7 @@
   }
   
   .nav__item:hover {
-    color: #f92626;
+    color: #f9a826;
     font-weight: bold;
     text-decoration: underline;
   }

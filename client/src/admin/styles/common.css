@@ -1,0 +1,59 @@
+/* Common.css */
+
+.sidebar {
+    background-color: #333333;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar button {
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+  }
+  
+  .sidebar button:hover {
+    background-color: #555;
+  }
+  
+  .sidebar button.active {
+    background-color: #555;
+  }
+  
+  .right-sidebar {
+    background-color: #f0f0f0;
+    width: 250px;
+    padding: 20px;
+  }
+  
+  .total-sales-box {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .total-sales-box:hover {
+    transform: translateY(-5px);
+  }
+  

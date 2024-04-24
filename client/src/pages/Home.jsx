@@ -5,6 +5,7 @@ import Helmet from '../components/Helmet/Helmet';
 import { Container, Row, Col } from 'reactstrap';
 import FindCarForm from '../UI/FindCarForm';
 
+
 const Home = () => {
   return (
    <Helmet title='Home'>
@@ -26,6 +27,7 @@ const Home = () => {
         </Container>
       </div>
     </section>
+
 
    </Helmet>
   )
