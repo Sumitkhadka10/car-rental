@@ -1,171 +1,66 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './login.css';
-import { GoogleLogin } from 'react-google-login';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContexts';
-import { Alert, Modal, Button } from 'react-bootstrap';
+import React, { useRef, useState } from 'react';
+import './login.css'; 
+import { Alert } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase'; // Import your firebase configuration
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-  const { login } = useAuth();
+export default function Login() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [showSuccess, setShowSuccess] = useState(false);
+    const navigate = useNavigate();
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-  useEffect(() => {
-    setShowWelcome(true);
-  }, []);
+        try {
+            setError('');
+            setLoading(true);
+        
+            // Sign in the user using Firebase authentication
+            await signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value);
+            
+            // Redirect the user after successful login
+            navigate("/admin/*", { replace: true });
 
-  const handleLogout = () => {
-    setLoggedIn(false);
-    setEmail('');
-    setPassword('');
-  };
+            // Show successful login popup
+            setShowSuccess(true);
+        } catch (error) {
+            // Handle errors
+            setError('Failed to log in: ' + error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  const responseGoogleSuccess = (response) => {
-    console.log(response);
-  };
-
-  const responseGoogleFailure = (response) => {
-    console.error('Google login failed:', response);
-  };
-
-  const handleForgotPassword = () => {
-    setShowForgotPasswordModal(true);
-  };
-
-  const handleCloseForgotPasswordModal = () => {
-    setShowForgotPasswordModal(false);
-  };
-
-  const handleSendResetEmail = () => {
-    // Check if the entered email exists in your database
-    const isRegisteredEmail = checkIfEmailExists(email);
-
-    if (isRegisteredEmail) {
-      // If the email is registered, send the reset email
-      // Here you would implement the logic to send the reset email
-      alert(`Password reset link sent to ${email}`);
-      setShowForgotPasswordModal(false);
-    } else {
-      // If the email is not registered, show an error message
-      alert("This email is not registered. Please enter the email associated with your account.");
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      setError('');
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/", { replace: true })
-      setLoggedIn(true);
-      alert('Login successful!');
-    } catch (error) {
-      setError('Failed to log in');
-    }
-
-    setLoading(false);
-  };
-
-  const checkIfEmailExists = (email) => {
-    // Placeholder function to check if the email exists in your database
-    // Replace this with your actual logic to check if the email is registered
-    // For demonstration, we assume the email is registered if it's not empty
-    return email !== '';
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div className="container-login">
-        <div className="content">
-          {showWelcome && (
-            <div className="welcome-text">
-              <h3>Welcome back!</h3>
-              {error && <Alert variant='danger'>{error}</Alert>}
-            </div>
-          )}
-          <div className="form">
+    return (
+        <div className="main">
             <div className="login-container">
-              {loggedIn ? (
-                <div>
-                  <h2>Welcome, {email}!</h2>
-                  <button onClick={handleLogout}>Logout</button>
+                <div className="form">
+                    <div className="login-header">
+                        <h2 className='login-sub-text'>Log In</h2>
+                        {error && <Alert variant='danger'>{error}</Alert>}
+                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <div className="login-textfields">
+                            <input type="email" placeholder='Email' ref={emailRef} required />
+                            <input type="password" placeholder='Password' ref={passwordRef} required />
+                        </div>
+                        <div className="login-footer">
+                            <button className='login-btn' disabled={loading}>Log In</button>
+                            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+                        </div>
+                    </form>
                 </div>
-              ) : (
-                <div>
-                  <h2>Login</h2>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    ref={emailRef}
-                    required
-                  />
-                  <br />
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    ref={passwordRef}
-                    required
-                  />
-                  <br />
-                  <div className="sign">Need an account? <Link to="/signup">Sign up</Link></div>
-                  <p onClick={handleForgotPassword} className="forgot-password">Forgot Password</p>
-                  <button disabled={loading}>Login</button>
-                  <GoogleLogin
-                    clientId="548860831968-2ic30h94q04hi5nk3v2oid5hjvuvvudv.apps.googleusercontent.com"
-                    buttonText="Continue with Google"
-                    onSuccess={responseGoogleSuccess}
-                    onFailure={responseGoogleFailure}
-                    cookiePolicy={'single_host_origin'}
-                  />
-                </div>
-              )}
             </div>
-          </div>
+            {showSuccess && (
+                <div className="success-popup">
+                    <p>Login successful!</p>
+                </div>
+            )}
         </div>
-      </div>
-
-      {/* Forgot Password Modal */}
-      <Modal show={showForgotPasswordModal} onHide={handleCloseForgotPasswordModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Forgot Password</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>Please enter your email address below. We'll send you a password reset link.</p>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseForgotPasswordModal}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleSendResetEmail}>
-            Send Reset Email
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </form>
-  );
-};
-
-export default LoginPage;
+    );
+}
