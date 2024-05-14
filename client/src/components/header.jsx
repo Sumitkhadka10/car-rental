@@ -42,7 +42,7 @@ const Header = () => {
                 }
                 <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-body-tertiary header-line-1">
     <Container>
-        <Navbar.Brand as={Link} to="/">Vroom</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Vroom Car Rental</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

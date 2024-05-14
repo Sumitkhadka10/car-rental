@@ -96,25 +96,25 @@
     "customer-reviews": [
         {
             "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-1.jpg",
-            "customerName": "James",
+            "customerName": "Sarthak Neupane",
             "customerReview": "Renting was much easier than I expected!",
             "customerStar": 5
         },
         {
             "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-2.jpg",
-            "customerName": "Olivia",
+            "customerName": "Rik Ma",
             "customerReview": "I am very satisfied, I will use 'Rent a Car' again.",
             "customerStar": 4
         },
         {
             "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-3.jpg",
-            "customerName": "Charlotte",
+            "customerName": "Grishma Shrestha",
             "customerReview": "Excellent, 5 stars!",
             "customerStar": 5
         },
         {
             "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-4.jpg",
-            "customerName": "Michael",
+            "customerName": "Roman Maharjan",
             "customerReview": "It was a nice experience",
             "customerStar": 4
         }
