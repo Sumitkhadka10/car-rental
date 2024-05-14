@@ -95,25 +95,25 @@
     ],
     "customer-reviews": [
         {
-            "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-1.jpg",
+            "customerImageUrl": "https://tdh-southasia.de/wp-content/uploads/2020/12/Sanjeep.png",
             "customerName": "Sarthak Neupane",
             "customerReview": "Renting was much easier than I expected!",
             "customerStar": 5
         },
         {
-            "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-2.jpg",
+            "customerImageUrl": "https://www.imnepal.com/wp-content/uploads/2017/03/reema-bishwokarma-Nepali-Girl-Lady-Image.jpg",
             "customerName": "Rik Ma",
             "customerReview": "I am very satisfied, I will use 'Rent a Car' again.",
             "customerStar": 4
         },
         {
-            "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-3.jpg",
+            "customerImageUrl": "https://img.freepik.com/premium-photo/optimistic-nepali-girl-with-hopeful-expression_1308-150985.jpg",
             "customerName": "Grishma Shrestha",
             "customerReview": "Excellent, 5 stars!",
             "customerStar": 5
         },
         {
-            "customerImageUrl": "https://raw.githubusercontent.com/fbatuhanr/RentaCar-ReactJS/master/src/assets/images/reviews/customer-4.jpg",
+            "customerImageUrl": "https://wilson.com.np/wp-content/uploads/2021/01/117038600_4473217352718996_72226816295094960_n.jpg",
             "customerName": "Roman Maharjan",
             "customerReview": "It was a nice experience",
             "customerStar": 4
