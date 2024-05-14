@@ -787,7 +787,9 @@ textarea#comment.massage-bt::placeholder {
     color: #fefefd;
     margin: 0px;
 }
-
+p{
+    text-align: justify;
+}
 .social_icon {
     width: 100%;
     float: left;
@@ -882,6 +884,11 @@ textarea#comment::placeholder {
 .padding_left_15 {
     padding-left: 10px;
 }
+
+.footer__bottom p{
+    color: white;
+}
+
 
 
 
