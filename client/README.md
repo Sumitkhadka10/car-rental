@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+## 'Rent a Car' application created by React and Google Firebase
+#### Live Demo <a href='https://rentacar-reactjs.vercel.app/' target='_blank'>https://rentacar-reactjs.vercel.app/</a>
+### Modules:
+<ul>
+    <li>
+        ✔️-> React Bootstrap and SASS for responsive development
+    </li>
+    <li>
+        ✔️-> React Router Dom v6 for client and server-side routing
+    </li>
+    <li>
+        ✔️-> React Redux for global state management
+    </li>
+    <li>
+        ✔️-> React Persist for Redux store state to a persistent storage
+    </li>
+    <li>
+        ✔️-> Google Firebase for User Authentication & Firestore Database & File Storage 
+    </li>
+    <li>
+        ✔️-> Sweetalert2 for custom popups
+    </li>
+</ul>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Rent a Car (Video):
+https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/dfd86330-3573-4435-a012-f0c8cb802e47
 
-## Available Scripts
+### Rent a Car (Screenshot):
+![rent-a-car](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/33b709f4-e6ca-468a-8c49-c602151f8e70)
 
-In the project directory, you can run:
 
-### `npm start`
+### Project Videos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### User & Vehicle & Location Management:
+https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/8ee07e78-b8af-4d28-b6ca-3b69a3afb5d3
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### Rentals Management:
+https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/bec58c4b-2427-487a-9495-73b2c7018bf8
 
-### `npm test`
+##### Contact Form Management:
+https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/ad61b577-82c0-4ce8-9eee-7f5ff4ad1368
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Firebase Structure:
+https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/b8ae9740-2c52-417b-a13c-ace34f261c56 
 
-### `npm run build`
+### Projects Screenshots:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### Car Reservation:
+![reservation](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/1e27d38f-74ba-4018-b64a-fa16c2bc872a)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### User/Admin Login/Sign-up:
+![login](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/23a377f2-fc75-44f5-aa83-e24e8e03bb75)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### My Rentals:
+![rentals](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/6a1a95f7-4693-40ce-abbe-28af4df24103)
 
-### `npm run eject`
+##### Cars Management (Admin):
+![cars-management](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/09c475ce-ebe4-4db7-919f-0d09e6f1f0cd)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### Rentals Management (Admin):
+![rentals-management](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/10f554f2-9936-4526-9d26-93e1ade5feba)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##### Vehicle Model Management (Admin):
+![model-management](https://github.com/fbatuhanr/RentaCar-ReactJS/assets/34348780/c7eb16b9-7dab-4995-8acc-0c5d3ee8ee6e)

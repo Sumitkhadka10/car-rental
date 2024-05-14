@@ -1,0 +1,14 @@
+.form-container {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+    background-color: #fff; /* Change to desired background color */
+    padding: 40px; /* Increased padding */
+    margin: 10px auto; /* Added margin */
+}
+.signup-background {
+    background-image: url('11.jpg');
+    background-size: cover;
+    background-position: center;
+}
