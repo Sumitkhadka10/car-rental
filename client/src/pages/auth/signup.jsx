@@ -42,6 +42,7 @@ const Signup = () => {
                             )}
                         </Col>
                     </Row>
+                    <div className="form">
                     <Row className="justify-content-center">
                         <Col xs={12} md={8} className={isLoading ? "text-center" : null}>
                             {isLoading ? (
@@ -130,10 +131,11 @@ const Signup = () => {
                             )}
                         </Col>
                     </Row>
+                    </div>
                 </Container>
             </div>
         </div>
     );
 };
 
-export default Signup;
+export default Signup;

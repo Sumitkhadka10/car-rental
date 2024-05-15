@@ -31,6 +31,7 @@ const Login = () => {
                     </Col>
                 </Row>
                 <Row>
+                    <div className="form">
                     <Col>
                         <Row className="justify-content-center">
                             <Col xs={12} md={8} className={isLoading ? "text-center" : null}>
@@ -79,10 +80,11 @@ const Login = () => {
                             </Col>
                         </Row>
                     </Col>
+                    </div>
                 </Row>
             </Container>
         </div>
     );
 };
 
-export default Login;
+export default Login;
