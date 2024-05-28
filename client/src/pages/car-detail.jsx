@@ -7,6 +7,7 @@ import {Container, Row, Col, Form, ListGroup, InputGroup, Button, Spinner} from 
 import {TbEngine, TbManualGearbox} from "react-icons/tb";
 import {BsCarFront, BsFillCarFrontFill, BsFillFuelPumpFill} from "react-icons/bs";
 import {PiEngineFill} from "react-icons/pi";
+import { FaRupeeSign } from "react-icons/fa";
 
 import {useDispatch, useSelector} from "react-redux";
 import {makeReservation, reserveNow} from "../redux/features/ReserveSlice";
@@ -242,6 +243,12 @@ const CarDetail = () => {
                                             <span className="fs-6">Fuel Type:</span> &nbsp;
                                             <span className="fs-5 fw-bold">{cars[carId].fuelType}</span>
                                         </ListGroup.Item>
+                                        <ListGroup.Item action>
+                                        <FaRupeeSign size="2em" className="me-2" style={{ marginTop: '-10px' }} />
+                                        <span className="fs-6">Price/day:</span> &nbsp;
+                                        <span className="fs-5 fw-bold">{cars[carId].price}</span>
+                                    </ListGroup.Item>
+                                    
                                     </ListGroup>
 
                                     <div className="text-end">

@@ -60,7 +60,6 @@ const AdminHeader = () => {
                         <Col xs={12} md={6} className="text-center text-sm-start">
                             <h2 className="mt-1 mb-2">
                                 <Link as={Link} to="/admin">Rent a Car | Management</Link>
-                                <Button variant="info" className="my-2 py-1 text-white" type="button" onClick={handleReloadDemoContent}>Reload Demo Content!</Button>
                             </h2>
                         </Col>
                         <Col xs={12} md={6}>
@@ -96,10 +95,13 @@ const AdminHeader = () => {
                         <Nav className="ms-lg-3 mt-2 mt-lg-0">
                             <Nav.Link as={Link} to="rentals" eventKey="i">User Rentals</Nav.Link>
                             <Nav.Link as={Link} to="contact-form" eventKey="i">Contact Form</Nav.Link>
+                            <Nav.Link as={Link} to="sales-report" eventKey="i">Sales Report</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+
+
         </header>
     );
 };

@@ -1,59 +1,50 @@
-import React, {useEffect, useState} from 'react';
-import {Accordion, Button, Card, Col, Form, InputGroup, ListGroup, Row} from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Accordion, Button, Col, Form, InputGroup, ListGroup, Row } from "react-bootstrap";
+import { fetchCars, fetchLocations, fetchReservations } from "../../hooks/useFetchData";
+import { loadingContent } from "../../components/general/general-components";
+import { BsCarFront, BsFillCarFrontFill, BsFillFuelPumpFill } from "react-icons/bs";
+import { TbEngine, TbManualGearbox } from "react-icons/tb";
+import { PiEngineFill } from "react-icons/pi";
 
-import {fetchCars, fetchLocations, fetchReservations} from "../../hooks/useFetchData";
-import {loadingContent} from "../../components/general/general-components";
-import {BsCarFront, BsFillCarFrontFill, BsFillFuelPumpFill} from "react-icons/bs";
-import {TbEngine, TbManualGearbox} from "react-icons/tb";
-import {PiEngineFill} from "react-icons/pi";
-
-import {doc, getDocs, deleteDoc, query, collection, where} from "firebase/firestore";
+import { doc, getDocs, deleteDoc, query, collection, where } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import Swal from "sweetalert2";
 
 const RentalsManager = () => {
-
     const [isLoading, setIsLoading] = useState(true);
-
     const [cars, setCars] = useState(null);
     const [locations, setLocations] = useState(null);
-
     const [reservations, setReservations] = useState(null);
 
     const groupReservationsWithSameOwner = (allReservations) => {
-
         return allReservations.reduce((acc, curr) => {
-
-            let key = curr["reservationOwner"]
-            if(!acc[key]) acc[key] = []
-
-            acc[key].push(curr)
-
-            return acc
+            let key = curr["reservationOwner"];
+            if (!acc[key]) acc[key] = [];
+            acc[key].push(curr);
+            return acc;
         }, {});
-    }
+    };
 
     useEffect(() => {
-
         Promise.all([
             fetchCars(),
             fetchLocations(),
             fetchReservations(),
         ])
         .then(responses => {
-            setCars(responses[0])
-            setLocations(responses[1])
-            setReservations( responses[2] ? groupReservationsWithSameOwner(responses[2]) : responses[2] )
-
+            setCars(responses[0]);
+            setLocations(responses[1]);
+            if (responses[2]) {
+                const groupedReservations = groupReservationsWithSameOwner(responses[2]);
+                setReservations(groupedReservations);
+            }
             setIsLoading(false);
         });
     }, []);
 
-    const handleCancelAllReservations = () => {
+    const handleCancelAllReservations = () => {};
 
-    }
     const handleCancelUserReservations = async (owner) => {
-
         Swal.fire({
             title: "Do you want to cancel all reservation of this user?",
             text: "You won't be able to revert this!",
@@ -64,41 +55,36 @@ const RentalsManager = () => {
             confirmButtonText: "Yes, cancel all!",
             cancelButtonText: "No"
         }).then(async (result) => {
-
             if (result.isConfirmed) {
-
                 const q = query(collection(db, "rentals"), where("reservationOwner", "==", owner));
                 const querySnapshot = await getDocs(q);
-
                 Promise.all(querySnapshot.docs.map(async (doc) => {
-                    await deleteDoc(doc.ref)
+                    await deleteDoc(doc.ref);
                 }))
-                    .then(() => {
-
-                        Swal.fire(
-                            `User's All Reservations Cancelled!`,
-                            `Reservations has been removed!`,
-                            'success'
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.reload();
-                            }
-                        });
-                    })
-                    .catch(err => {
-                        console.log(err);
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: "Something went wrong!"
-                        });
-                    });;
+                .then(() => {
+                    Swal.fire(
+                        `User's All Reservations Cancelled!`,
+                        `Reservations have been removed!`,
+                        'success'
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.reload();
+                        }
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!"
+                    });
+                });
             }
         });
-    }
+    };
 
-    const handleCancelSpecificReservation = async documentId => {
-
+    const handleCancelSpecificReservation = async (documentId) => {
         Swal.fire({
             title: "Do you want to cancel this reservation?",
             text: "You won't be able to revert this!",
@@ -110,31 +96,29 @@ const RentalsManager = () => {
             cancelButtonText: "No"
         }).then((result) => {
             if (result.isConfirmed) {
-
                 deleteDoc(doc(db, "rentals", documentId))
-                    .then(() => {
-
-                        Swal.fire(
-                            'Reservation Cancelled!',
-                            'Selected car has been removed!',
-                            'success'
-                        ).then((result) => {
-                            if (result.isConfirmed) {
-                                window.location.reload();
-                            }
-                        });
-                    })
-                    .catch(err => {
-                        console.log(err);
-                        Swal.fire({
-                            icon: "error",
-                            title: "Oops...",
-                            text: "Something went wrong!"
-                        });
+                .then(() => {
+                    Swal.fire(
+                        'Reservation Cancelled!',
+                        'Selected car has been removed!',
+                        'success'
+                    ).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.reload();
+                        }
                     });
+                })
+                .catch(err => {
+                    console.log(err);
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!"
+                    });
+                });
             }
         });
-    }
+    };
 
     return (
         <div>
@@ -148,7 +132,6 @@ const RentalsManager = () => {
                             <Accordion>
                                 {
                                     Object.entries(reservations).map(([groupKey, reserveGroup], index) =>
-
                                         <Accordion.Item key={index} eventKey={index}>
                                             <Accordion.Header className="m-0 p-0">
                                                 <h3 className="m-0 p-0">
@@ -160,7 +143,7 @@ const RentalsManager = () => {
                                                 <Accordion className="my-2">
                                                 {
                                                     reserveGroup.map((reserveData, index) =>
-                                                        <Accordion.Item eventKey={index}>
+                                                        <Accordion.Item key={index} eventKey={index}>
                                                             <Accordion.Header className="m-0 p-0">
                                                                 <h3 className="m-0 p-0">
                                                                     <BsFillCarFrontFill size="2em" className="me-2" style={{marginTop: "-10px"}}/>
@@ -200,17 +183,20 @@ const RentalsManager = () => {
                                                                                         <span className="fs-6">Fuel Type:</span> &nbsp;
                                                                                         <span className="fs-5 fw-bold">{cars[reserveData.carId].fuelType}</span>
                                                                                     </ListGroup.Item>
+                                                                                    
+                                                                                    <ListGroup.Item>
+                                                                                        <BsFillCarFrontFill size="2em" className="me-2" style={{marginTop: "-10px"}}/>
+                                                                                        <span className="fs-6">Price:</span> &nbsp;
+                                                                                        <span className="fs-5 fw-bold">${reserveData.price}</span>
+                                                                                    </ListGroup.Item>
+                    
                                                                                 </ListGroup>
-                                                                            </Col>
-                                                                        </Row>
-                                                                        <Row>
-                                                                            <Col>
                                                                                 <Row>
                                                                                     <Col xs={12} md={6}>
                                                                                         <InputGroup size="lg" className="my-2">
-                                                                                            <InputGroup.Text id="pick-up-locations">Pick-up Location</InputGroup.Text>
+                                                                                            <InputGroup.Text id="pickup-location">Pick-up Location</InputGroup.Text>
                                                                                             <Form.Select size="lg" disabled>
-                                                                                                <option value={reserveData.pickupLocation}>{locations[reserveData.pickupLocation]}</option>
+                                                                                                <option value={reserveData.pickupLocation} >{locations[reserveData.pickupLocation]}</option>
                                                                                             </Form.Select>
                                                                                         </InputGroup>
                                                                                     </Col>
@@ -223,15 +209,16 @@ const RentalsManager = () => {
                                                                                                 value={reserveData.startDate}
                                                                                                 disabled
                                                                                             />
+                                                                                            <option value={reserveData.startDate} >{locations[reserveData.startDate]}</option>
                                                                                         </InputGroup>
                                                                                     </Col>
                                                                                 </Row>
                                                                                 <Row>
                                                                                     <Col xs={12} md={6}>
                                                                                         <InputGroup size="lg" className="my-2">
-                                                                                            <InputGroup.Text id="drop-off-locations">Drop-off Location</InputGroup.Text>
+                                                                                            <InputGroup.Text id="drop-off-location">Drop-off Location</InputGroup.Text>
                                                                                             <Form.Select size="lg" disabled>
-                                                                                                <option value={reserveData.dropoffLocation} >{locations[reserveData.dropoffLocation]}</option>
+                                                                                                <option value={reserveData.startDate} >{locations[reserveData.dropoffLocation]}</option>
                                                                                             </Form.Select>
                                                                                         </InputGroup>
                                                                                     </Col>
@@ -264,7 +251,6 @@ const RentalsManager = () => {
                                                     )
                                                 }
                                                 </Accordion>
-
                                                 <div className="mt-2">
                                                     <Button variant="danger" className="w-100" type="button"
                                                         onClick={() => handleCancelUserReservations(groupKey)}
