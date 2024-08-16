@@ -42,7 +42,7 @@ const RentalsManager = () => {
         });
     }, []);
 
-    const handleCancelAllReservations = () => {};
+ 
 
     const handleCancelUserReservations = async (owner) => {
         Swal.fire({
