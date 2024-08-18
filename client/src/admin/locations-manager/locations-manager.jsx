@@ -85,7 +85,7 @@ const LocationsManager = () => {
                 console.log(err);
                 Swal.fire({
                     icon: "error",
-                    title: "Oops...",
+                    title: "Oops....",
                     text: "Something went wrong!"
                 });
             });
